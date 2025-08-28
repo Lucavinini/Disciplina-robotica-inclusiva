@@ -6,7 +6,6 @@ Implemente um código que faça com que o LED fique:
 
 */
 
-
 void setup() {
  pinMode(5, OUTPUT);
 }
