@@ -17,4 +17,5 @@ O repositório está organizado da seguinte forma para facilitar a navegação e
 └── src
 ├── Prática 1
 ├── Prática 2
+├── Prática 3 - Atuadores
 ```
