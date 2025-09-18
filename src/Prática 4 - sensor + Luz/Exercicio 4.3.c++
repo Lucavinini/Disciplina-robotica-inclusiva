@@ -4,7 +4,7 @@ int ECHO_PIN = 8; // Pino ECHO do sensor ultrassônico const
 int ledPinverde = 4; // Define o pino 4 como o LED const 
 int ledPinamarelo = 2; // Define o pino 2 como o LED const 
 int ledPinvermelho = 3; // Define o pino 3 como o LED 
-
+int buzzerPin = 5; //Define o pino 5 como saido do buzzer
 Servo servo; // Objeto para controle do servo 
 
 void setup() { Serial.begin(9600); // Inicializa a comunicação serial 
@@ -27,15 +27,20 @@ void loop(){
     digitalWrite(ledPinverde, HIGH); // Liga o LED 
     digitalWrite(ledPinamarelo, LOW); // Desliga o LED 
     digitalWrite(ledPinvermelho, LOW); // Desliga o LED 
+    noTone(buzzerPin); //Desativa o buzzer
     
   }else if(distance_cm <= 100 && distance_cm >= 50) { 
     digitalWrite(ledPinverde, LOW); // Desliga o LED 
     digitalWrite(ledPinamarelo, HIGH); // Liga o LED 
     digitalWrite(ledPinvermelho, LOW); // Desliga o LED 
+    noTone(buzzerPin);//Desativa o buzzer
+    
   }else{ 
     digitalWrite(ledPinverde, LOW); // Desliga o LED 
     digitalWrite(ledPinamarelo, LOW); // Desliga o LED 
     digitalWrite(ledPinvermelho, HIGH); // Liga o LED 
+    tone(buzzerPin, 1000); //Ativa o buzzer
+
    }
 
 
